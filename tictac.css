@@ -1,0 +1,8 @@
+table {
+  width: 400px;
+  height: 400px;
+}
+
+.left {
+  border-left: 1px solid black;
+}
