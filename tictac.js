@@ -47,6 +47,14 @@ $(document).ready(function() {
         $(this).css('background-color', 'white');
  }
 });
+    var victory = function(winner, tiles) {
+        $('p').text(winner + ' Wins!');
+        $(tiles[0]).css('background-color', 'green');
+        $(tiles[1]).css('background-color', 'green');
+        $(tiles[2]).css('background-color', 'green');
+      }
+
+
    $('td').click(function() {
      $(this).delay(2000).queue(function() {
 
@@ -61,63 +69,81 @@ $(document).ready(function() {
       var $rb = $('#rb').text()
 
       if($lt == 'X' && $ct == 'X' && $rt == 'X') {
-        $('p').text('X Wins!');
-        $('#lt, #ct, #rt').css('background-color', 'green');
+          winner = 'X';
+          tiles = [$('#lt'), $('#ct'), $('#rt')]
+          victory(winner, tiles)
       } else if ($lt == 'X' && $lm == 'X' && $lb == 'X') {
-        $('p').text('X Wins!');
-        $('#lt, #lm, #lb').css('background-color', 'green');
+          winner = 'X';
+          tiles = [$('#lt'), $('#lm'), $('#lb')]
+          victory(winner, tiles)
       } else if ($lt == 'X' && $cm == 'X' && $rb == 'X') {
-        $('p').text('X Wins!');
-        $('#lt, #cm, #rb').css('background-color', 'green');
+          winner = 'X';
+          tiles = [$('#lt'), $('#cm'), $('#rb')]
+          victory(winner, tiles)
       } else if ($ct == 'X' && $cm == 'X' && $cb == 'X') {
-        $('p').text('X Wins!');
-        $('#ct, #cm, #cb').css('background-color', 'green');
+          winner = 'X';
+          tiles = [$('#ct'), $('#cm'), $('#cb')]
+          victory(winner, tiles)
       } else if ($rt == 'X' && $cm == 'X' && $lb == 'X') {
-        $('p').text('X Wins!');
-        $('#rt, #cm, #lb').css('background-color', 'green');
+          winner = 'X';
+          tiles = [$('#rt'), $('#cm'), $('#lb')]
+          victory(winner, tiles)
       } else if ($lm == 'X' && $cm == 'X' && $rm == 'X') {
-        $('p').text('X Wins!');
-        $('#lm, #cm, #rm').css('background-color', 'green');
+          winner = 'X';
+          tiles = [$('#lm'), $('#cm'), $('#rm')]
+          victory(winner, tiles)
       } else if ($lb == 'X' && $cb == 'X' && $rb == 'X') {
-        $('p').text('X Wins!');
-        $('#lb, #cb, #rb').css('background-color', 'green');
+          winner = 'X';
+          tiles = [$('#lb'), $('#cb'), $('#rb')]
+          victory(winner, tiles)
       } else if ($rt == 'X' && $rm == 'X' && $rb == 'X') {
-        $('p').text('X Wins!');
-        $('#rt, #rm, #rb').css('background-color', 'green');
+          winner = 'X';
+          tiles = [$('#rt'), $('#rm'), $('#rb')]
+          victory(winner, tiles)
       } else if ($lt == 'O' && $ct == 'O' && $rt == 'O') {
-        $('p').text('O Wins!');
-        $('#lt, #ct, #rt').css('background-color', 'green');
+          winner = 'O';
+          tiles = [$('#lt'), $('#ct'), $('#rt')]
+          victory(winner, tiles)
       } else if ($lt == 'O' && $lm == 'O' && $lb == 'O') {
-        $('p').text('O Wins!');
-        $('#lt, #lm, #lb').css('background-color', 'green');
+          winner = 'O';
+          tiles = [$('#lt'), $('#lm'), $('#lb')]
+          victory(winner, tiles)
       } else if ($lt == 'O' && $cm == 'O' && $rb == 'O') {
-        $('p').text('O Wins!');
-        $('#lt, #cm, #rb').css('background-color', 'green');
+          winner = 'O';
+          tiles = [$('#lt'), $('#cm'), $('#rb')]
+          victory(winner, tiles)
       } else if ($ct == 'O' && $cm == 'O' && $cb == 'O') {
-        $('p').text('O Wins!');
-        $('#ct, #cm, #cb').css('background-color', 'green');
+          winner = 'O';
+          tiles = [$('#ct'), $('#cm'), $('#cb')]
+          victory(winner, tiles)
       } else if ($rt == 'O' && $cm == 'O' && $lb == 'O') {
-        $('p').text('O Wins!');
-        $('#rt, #cm, #lb').css('background-color', 'green');
+          winner = 'O';
+          tiles = [$('#rt'), $('#cm'), $('#lb')]
+          victory(winner, tiles)
       } else if ($lm == 'O' && $cm == 'O' && $rm == 'O') {
-        $('p').text('O Wins!');
-        $('#lm, #cm, #rm').css('background-color', 'green');
+          winner = 'O';
+          tiles = [$('#lm'), $('#cm'), $('#rm')]
+          victory(winner, tiles)
       } else if ($lb == 'O' && $cb == 'O' && $rb == 'O') {
-        $('p').text('O Wins!');
-        $('#lb, #cb, #rb').css('background-color', 'green');
+          winner = 'O';
+          tiles = [$('#lb'), $('#cb'), $('#rb')]
+          victory(winner, tiles)
       } else if ($rt == 'O' && $rm == 'O' && $rb == 'O') {
-        $('p').text('O Wins!');
-        $('#rt, #rm, #rb').css('background-color', 'green');
-      //} else if (($lt == 'X' || 'O') && ($ct == 'X' || 'O') && ($rt == 'X' || 'O') &&
-      //  ($lm == 'X' || 'O') && ($cm == 'X' || 'O') && ($rm == 'X' || 'O') &&
-      //  ($lb == 'X' || 'O') && ($cb == 'X' || 'O') && ($rb == 'X' || 'O')) {
-      //  $('p').text("It's a tie!?!?");
+          winner = 'O';
+          tiles = [$('#rt'), $('#rm'), $('#rb')]
+          victory(winner, tiles)
+      } else if (($lt == 'X' || $lt == 'O') && ($ct == 'X' || $ct == 'O') &&
+          ($rt == 'X' || $rt == 'O') && ($lm == 'X' || $lm == 'O') &&
+          ($cm == 'X' || $cm == 'O') && ($rm == 'X' || $rm == 'O') &&
+          ($lb == 'X' || $lb == 'O') && ($cb == 'X' || $cb == 'O') &&
+          ($rb == 'X' || $rb == 'O')) {
+        $('p').text("It's a tie!?!?");
       } else {
         $('p').text(' ');
       }
-      console.log($lt);
-      console.log($ct);
-      console.log($rt);
+        console.log($lt);
+        console.log($ct);
+        console.log($rt);
 
       $(this).dequeue();
 
@@ -147,8 +173,34 @@ $(document).ready(function() {
 
 });
 });
+
+
+
+/*$(document).ready(function() {
+    //for (i = 0; i <=8; i++) {
+    //row1.push(Math.floor(Math.random) * 9 + 1)
+    //console.log(row1)
+    //};
+    for (var a=[],i=0;i<=8;++i) a[i]=i + 1;
+
+    function shuffle(array) {
+      var tmp, current, top = array.length;
+      if(top) while(--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+      }
+      return array;
+    }
+
+    a = shuffle(a);
+    console.log(a);
+});
+
+//console.log(row1)
 //$('#card').click(function () {
   //  $(this).toggleClass('flipped');
 //});
 
-//});
+//}); */
