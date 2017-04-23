@@ -33,6 +33,8 @@ var val = $(this).val(" ");
 
 
 $(document).ready(function() {
+  var elements = ['p', '#ct', '#rt', '#lt', '#lm', '#cm',
+                  '#rm', '#lb', '#cb', '#rb']
     $('td').click(function() {
       var card = $(this).html();
       console.log(card);
@@ -149,8 +151,25 @@ $(document).ready(function() {
 
         });
 });
+    var clear = function(elements) {
+         for (var i = 0; i < elements.length; i++) {
+           $(elements[i]).text(' ');
+           $(elements[i]).css('background-color', 'white');
+           console.log(elements[3])
+         }
+       }
+        console.log(elements[3])
 
-    $("button").click(function() {
+        $("button").click(function() {
+             clear(elements);
+           })
+
+    /*$("button").click(function(elements) {
+         for (var i = 0; i < elements.length; i++) {
+           $(elements[i]).text(' ');
+           $(elements[i]).css('background-color', 'white');
+         } */
+         /*
          $('p').text(' ')
          $('#ct').text(' ')
          $('#rt').text(' ')
@@ -170,8 +189,8 @@ $(document).ready(function() {
          $('#lb').css('background-color', 'white');
          $('#cb').css('background-color', 'white');
          $('#rb').css('background-color', 'white');
-
-});
+*/
+//});
 });
 
 
