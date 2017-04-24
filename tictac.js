@@ -1,35 +1,3 @@
-/* var el = document.getElementById("shoppingList");
-el.addEventListener('click', function(e) {
-  itemDone(e);
-}, false);
-
-$(document).ready(function() {
-   $("#shoppingList").click(function() {
-     $(this).itemDone();
- });
- });
-
- function getTarget(e) {
-   return e.target;
- }
-
- function itemDone(e) {
-   var target, elParent, elGrandparent;
-   target = getTarget(e);
-   elParent = target.parentNode;
-   elGrandparent = target.parentNode.parentNode;
-   elGrandparent.removeChild(elParent);
-
-   if (e.preventDefault) {
-     e.preventDefault();
-   }
- }
-
-var $listText = $('ul').text();
-$('ul').append('<p>' + $listText + '</i>'); */
-
-var val = $(this).val(" ");
-
 
 
 $(document).ready(function() {
@@ -41,36 +9,36 @@ $(document).ready(function() {
       if (card == ' ') {
         $(this).text('X');
         $(this).css('background-color', 'red');
- } else if (card == 'X') {
+    } else if (card == 'X') {
         $(this).text('O');
         $(this).css('background-color', 'blue');
- } else if (card == 'O') {
+    } else if (card == 'O') {
         $(this).text(' ')
         $(this).css('background-color', 'white');
- }
-});
-    var victory = function(winner, tiles) {
-        $('p').text(winner + ' Wins!');
-        $(tiles[0]).css('background-color', 'green');
-        $(tiles[1]).css('background-color', 'green');
-        $(tiles[2]).css('background-color', 'green');
-      }
+    }
+  });
 
+  var victory = function(winner, tiles) {
+      $('p').text(winner + ' Wins!');
+      $(tiles[0]).css('background-color', 'green');
+      $(tiles[1]).css('background-color', 'green');
+      $(tiles[2]).css('background-color', 'green');
+    }
 
    $('td').click(function() {
      $(this).delay(2000).queue(function() {
 
-      var $lt = $('#lt').text()
-      var $ct = $('#ct').text()
-      var $rt = $('#rt').text()
-      var $lm = $('#lm').text()
-      var $cm = $('#cm').text()
-      var $rm = $('#rm').text()
-      var $lb = $('#lb').text()
-      var $cb = $('#cb').text()
-      var $rb = $('#rb').text()
+       var $lt = $('#lt').text()
+       var $ct = $('#ct').text()
+       var $rt = $('#rt').text()
+       var $lm = $('#lm').text()
+       var $cm = $('#cm').text()
+       var $rm = $('#rm').text()
+       var $lb = $('#lb').text()
+       var $cb = $('#cb').text()
+       var $rb = $('#rb').text()
 
-      if($lt == 'X' && $ct == 'X' && $rt == 'X') {
+        if($lt == 'X' && $ct == 'X' && $rt == 'X') {
           winner = 'X';
           tiles = [$('#lt'), $('#ct'), $('#rt')]
           victory(winner, tiles)
@@ -139,87 +107,25 @@ $(document).ready(function() {
           ($cm == 'X' || $cm == 'O') && ($rm == 'X' || $rm == 'O') &&
           ($lb == 'X' || $lb == 'O') && ($cb == 'X' || $cb == 'O') &&
           ($rb == 'X' || $rb == 'O')) {
-        $('p').text("It's a tie!?!?");
+          $('p').text("It's a tie!?!?");
       } else {
-        $('p').text(' ');
+          $('p').text(' ');
       }
-        console.log($lt);
-        console.log($ct);
-        console.log($rt);
 
       $(this).dequeue();
 
-        });
-});
+    });
+  });
+
     var clear = function(elements) {
-         for (var i = 0; i < elements.length; i++) {
-           $(elements[i]).text(' ');
-           $(elements[i]).css('background-color', 'white');
-           console.log(elements[3])
-         }
-       }
-        console.log(elements[3])
+      for (var i = 0; i < elements.length; i++) {
+        $(elements[i]).text(' ');
+        $(elements[i]).css('background-color', 'white');
+      }
+    }
 
         $("button").click(function() {
              clear(elements);
-           })
+   })
 
-    /*$("button").click(function(elements) {
-         for (var i = 0; i < elements.length; i++) {
-           $(elements[i]).text(' ');
-           $(elements[i]).css('background-color', 'white');
-         } */
-         /*
-         $('p').text(' ')
-         $('#ct').text(' ')
-         $('#rt').text(' ')
-         $('#lt').text(' ')
-         $('#lm').text(' ')
-         $('#cm').text(' ')
-         $('#rm').text(' ')
-         $('#lb').text(' ')
-         $('#cb').text(' ')
-         $('#rb').text(' ')
-         $('#ct').css('background-color', 'white');
-         $('#rt').css('background-color', 'white');
-         $('#lt').css('background-color', 'white');
-         $('#lm').css('background-color', 'white');
-         $('#cm').css('background-color', 'white');
-         $('#rm').css('background-color', 'white');
-         $('#lb').css('background-color', 'white');
-         $('#cb').css('background-color', 'white');
-         $('#rb').css('background-color', 'white');
-*/
-//});
 });
-
-
-
-/*$(document).ready(function() {
-    //for (i = 0; i <=8; i++) {
-    //row1.push(Math.floor(Math.random) * 9 + 1)
-    //console.log(row1)
-    //};
-    for (var a=[],i=0;i<=8;++i) a[i]=i + 1;
-
-    function shuffle(array) {
-      var tmp, current, top = array.length;
-      if(top) while(--top) {
-        current = Math.floor(Math.random() * (top + 1));
-        tmp = array[current];
-        array[current] = array[top];
-        array[top] = tmp;
-      }
-      return array;
-    }
-
-    a = shuffle(a);
-    console.log(a);
-});
-
-//console.log(row1)
-//$('#card').click(function () {
-  //  $(this).toggleClass('flipped');
-//});
-
-//}); */
